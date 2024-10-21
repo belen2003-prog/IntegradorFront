@@ -1,0 +1,284 @@
+/*======generales*/
+/*esto es para tener todos los elementos receteados porq el html agrega un poco de pading y margen
+si no encuentra la funete rubik usa sans-serif*/
+*{
+margin: 0;
+padding: 0;
+font-family: "Rubik",
+ sans-serif;
+}
+/*=====header*/
+.container_principalHeader {
+/*le doy un ancho de 100vw(viewin) y un alto de 8vh color de fondo violeta*/
+width: 100vw;
+height: 8vh;
+background-color:rgb(182, 132, 230);
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+.container_contentHeader{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem;
+
+}
+.inputHeader{
+  border-radius: 0.4rem;
+  border: none;
+  padding: 0.4rem;
+  outline: none;
+  height: 2vh;
+  width:20vw;
+  font-size: 1.7vh;
+}
+.headerserch{
+  display: felx;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1vh;
+}
+.buttonbuscar{
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+  width: 14vm;
+  color: white;
+  /*lo centro al boton*/
+ 
+  justify-content: space-around;
+  align-items: center;
+}
+/*con esto hago que cuando estoy sobre el boton se ponga la manito*/
+.buttonbuscar:hover{
+  cursor:pointer;
+  /*cuando pongo el cursor sobre el boton cambio el color*/
+  background-color: rgb(193, 173, 212);
+  transition: 0.2s ease;
+}
+.buttonAgregar{
+  width: 20vw;
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.buttonAgregar:hover{
+  cursor:pointer;
+  background-color: rgb(193, 173, 212);
+  transition: 0.2s ease;
+}
+/*=======main*/
+.container_view{
+   /*defino como voy a dividir la pantalla en columnas ,grid hace que sean columnas verticales*/
+  display:grid ;
+  grid-template-columns:0.2fr 0.8fr;
+}
+.listAside{
+  background-color: rgb(79, 175, 192);
+  height: 92vh;
+}
+/*=======store=======*/
+.store{
+  max-height: 92vh;
+  overflow-y: auto;
+  background-color: rgb(205, 205, 231);
+  height: 92vh;
+  width: 100%;
+}
+/*aca edito cada categoia*/
+.sectionstore{
+background-color: rgb(251, 251, 253);
+margin: 1.5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding: 1rem;
+}
+.sectionstore img{
+  width: 65%;
+  border-radius: 0.4rem;
+  box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.3);
+  margin: 2rem;
+}
+.containerTitleSection{
+  margin: 1rem;
+  font-size: 4vh;
+  border-bottom: 1px solid rgb(182, 132, 230);
+}
+/*aca edito cada categoia*/
+.containerProductStore{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,0.6fr);
+  gap: 2vh;
+}
+/*aca estoy editanto el producto directamente*/
+.containerTargetitem{
+  width: 20vw;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.4rem;
+  box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.3);
+  background-color: rgb(255,255,255);
+  border-radius: 0.4rem;
+  transition: 0.2s ease;
+}
+.containerTargetitem:hover{
+  cursor: pointer;
+  transform: scale(1.08);
+}
+.containerTargetitem h2{
+  font-size: 3vh;
+  text-align: center;
+}
+.targetprops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+/*=======listAsie===*/
+.listAside{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/*accedo al h2*/
+.listAside h2{
+  display: flex; 
+  /*tamaño de categorias*/
+  font-size: 4vh;
+  justify-content: center;
+  align-items: center;
+}
+/*accedo al ul*/
+.listAside ul{
+  margin-top: 3vh;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 1vh;
+}
+/*accedo a los elementos li dentro del ul*/
+.listAside ul li {
+  font-size: 2vh;
+  font-weight: 500;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+.listAside ul li:hover{
+  cursor: pointer;
+  background-color: rgb(181, 133, 226);
+  color: aliceblue;
+}
+.liActive{
+  text-decoration: underline;
+  background-color: rgb(181, 133, 226);
+  color: aliceblue;
+}
+/*=====popUp===*/
+.popUpContainer_principal{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*asi no muestro la pantalla para agregar*/
+  display: none;
+  justify-content: center;
+  align-items: center ;
+  /*cuando el div este activo 
+  muestro lo que esta atras del rectangulo borroso*/
+  backdrop-filter: blur(4px);
+}
+.popUpContainer{
+  width: 60vw;
+  height: 50vh;
+  background-color: aliceblue;
+  /*le doy profundidad al rectangulo(sombra=*/
+  box-shadow: 5px 2px 10px 10px 
+  rgba(0,0,0,0.3);
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.containertitlepopup{
+  width: 100%;
+  text-align: center;
+}
+.containerInputsPopup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+.containerInputsPopup input,
+select{
+  width: 60% ;
+  border: 1px solid gray;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+.containerbuttonpopup{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.buttonpopup{
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 2vh;
+}
+.acepted{
+  background-color: rgb(124, 221, 137);
+}
+.cancel{
+  background-color: yellow;
+}
+.delet{
+  background-color: red;
+}
+/*media querys*/
+@media screen and (min-width) {
+  .containerProductStore{
+    grid-template-columns: repeat(4, 0.6fr);
+  }
+  
+  .containerTargetitem{
+    width: 15vw;
+  }
+  
+}
+
+/*====scrollbar=======*/
+::-webkit-scrollbar{
+  width: 0.7rem;
+  background-color: #fff;
+  border-radius: 0.4rem;
+}
+::-webkit-scrollbar-thumb{
+  background-color: blueviolet;
+  border-radius: 0.4rem;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(165, 111, 216);
+  
+}
